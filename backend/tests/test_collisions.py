@@ -48,13 +48,13 @@ def test_no_collision_on_sudden_leader_braking():
     assert min_observed_gap >= 1.0
 
 
-def test_high_density_fleet_no_collision_100_to_300_vehicles():
+def test_high_density_fleet_no_collision_50_to_300_vehicles():
     """
-    Simulates high-density traffic with 100, 200, and 300 vehicles over hundreds of steps.
+    Simulates variable-density traffic with 50, 100, 200, and 300 vehicles over hundreds of steps.
     Audits every vehicle pair in every lane at every single timestep.
     Zero collisions or bumper overlaps permitted.
     """
-    for target_count in [100, 200, 300]:
+    for target_count in [50, 100, 200, 300]:
         config = ScenarioConfig(
             name=f"High Density Test {target_count}",
             target_vehicle_count=target_count,
