@@ -9,7 +9,8 @@ import ScenarioForm from './components/ScenarioForm';
 import QueueVisualizer from './components/QueueVisualizer';
 import TrafficCharts from './components/TrafficCharts';
 
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000';
+const RAW_BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000';
+const BACKEND_URL = RAW_BACKEND_URL.replace(/\/+$/, '');
 const WS_URL =
   import.meta.env.VITE_WS_URL ||
   (BACKEND_URL.startsWith('https://')
